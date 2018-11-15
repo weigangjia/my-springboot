@@ -2,3 +2,31 @@ server:
   port: 8088
   servlet:
     context-path: /
+spring:
+  http:
+    encoding:
+      force: true
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/my-springboot?useSSL=false&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: 123
+    #username: root
+    #password: root
+    hikari:
+      pool-name: gold_goods/ds1
+      connection-timeout: 45000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 5
+      minimum-idle: 0
+      connection-test-query: "select 1"
+      validation-timeout: 1000
+      isolate-internal-queries: true
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never

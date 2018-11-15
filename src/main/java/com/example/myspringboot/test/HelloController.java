@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Api(value="测试接口",description="写着玩玩")
 @RestController
-@RequestMapping("/demo")
+@RequestMapping("/")
 public class HelloController {
 
     @ApiOperation(value = "访问并返回一条问候语句", notes = "可好玩了", httpMethod = "POST")
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String hello(){
         return "hello,this is a springboot demo!";
     }
